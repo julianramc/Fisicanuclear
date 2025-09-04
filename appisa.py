@@ -346,31 +346,22 @@ if choice == "💖 Declaración de amor gigante":
 elif choice == "📝 Poema dedicado":
     enhanced_poem = """Isabella, estrella de mis versos,
 
-Eres melodía que danza en el viento,
-cabellos de oro que abrazan la luz,
-y en cada rizo vive un secreto
-que solo mi corazón puede leer.
+rubio incendio en la penumbra,
+cada rizo es un latido que no sé nombrar.
 
-Te nombro en el silencio de las tardes,
-cuando las palabras se vuelven mariposas
-y vuelan hacia ti con alas de seda,
-llevando susurros de amor eterno.
+sonrisa —abismo dulce—
+me arroja al centro de lo imposible,
+allí donde la piel se vuelve plegaria.
 
-Cruzas mi mundo con gracia infinita,
-y yo aprendo a escribir tu nombre
-en las estrellas, en las olas del mar,
-en cada latido que me recuerda
-que el amor verdadero existe.
+tu piel:
+un lenguaje que la noche traduce en deseo.
+tu alma:
+una constelación que insiste en quedarse,
+aun cuando todo lo demás se desvanezca.
 
-No me pidas que deje de amarte,
-porque eres el verso que nunca termino,
-la canción que siempre quiero cantar,
-el sueño del que nunca quiero despertar.
-
-Ven, quédate en este momento,
-donde las palabras se vuelven caricias
-y el tiempo se detiene solo para nosotros,
-idénticos en este amor que nos une."""
+te nombro en silencio,
+y el mundo es apenas un eco
+del resplandor que dejas en mí."""
 
     # --- CORRECCIÓN CLAVE: Usar <pre> para asegurar el formato del poema ---
     poem_html = f"""
@@ -482,3 +473,4 @@ st.markdown("✨ Creado con amor infinito para Isabella ✨<br>💕 Que cada dí
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
+
