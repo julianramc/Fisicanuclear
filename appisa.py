@@ -13,36 +13,37 @@ st.set_page_config(
 )
 
 # --------------------
-# CSS Mejorado con animaciones, gradientes y correcciones de color
+# CSS Mejorado con tonos pastel y correcciones para fondo
 # --------------------
 CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-    --primary: #ff6b9d;
-    --secondary: #c44569;
-    --accent: #f8b500;
-    --text: #2c2c54; /* Un azul oscuro para excelente contraste */
-    --light: #fff5f8;
-    --shadow: rgba(255, 107, 157, 0.2);
+    --primary: #ff99cc; /* Rosa pastel más suave */
+    --secondary: #ff66b2; /* Rosa un poco más intenso */
+    --accent: #ffd1dc; /* Rosa muy claro */
+    --text: #4a4a4a; /* Gris oscuro para texto, buen contraste */
+    --light-bg: #fff0f5; /* Fondo pastel general */
+    --card-bg: #ffffff; /* Fondo blanco para las tarjetas */
+    --shadow: rgba(255, 153, 204, 0.2); /* Sombra en tono rosa pastel */
 }
 
 body {
     font-family: 'Crimson Text', serif;
     color: var(--text);
-    background: linear-gradient(135deg, #ffeef8 0%, #fff5f8 50%, #f0f8ff 100%);
+    background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%); /* Gradiente suave de pastel a blanco */
     min-height: 100vh;
 }
 
 .main-container {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--card-bg); /* Blanco puro o un pastel muy claro */
     border-radius: 20px;
     box-shadow: 0 20px 40px var(--shadow);
     padding: 2rem;
     margin: 1rem;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 153, 204, 0.3); /* Borde suave */
 }
 
 .header {
@@ -72,19 +73,19 @@ body {
 }
 
 .card {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    background: linear-gradient(145deg, var(--card-bg), var(--accent)); /* Gradiente suave para tarjetas */
     border-radius: 15px;
     padding: 2rem;
     margin: 1.5rem 0;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255, 107, 157, 0.1);
+    border: 1px solid rgba(255, 153, 204, 0.1);
     transition: all 0.3s ease;
     animation: slideInUp 0.8s ease-out;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.2);
+    box-shadow: 0 15px 40px rgba(255, 153, 204, 0.2);
 }
 
 .big-love {
@@ -93,7 +94,7 @@ body {
     font-weight: 700;
     font-size: 4rem;
     margin: 1rem 0;
-    background: linear-gradient(45deg, #ff6b9d, #c44569, #ff6b9d);
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -101,17 +102,17 @@ body {
 }
 
 .poem {
-    color: var(--text);
+    color: var(--text); /* Asegura que el texto del poema sea oscuro */
     text-align: center;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7); /* Fondo más claro para el poema */
     border-radius: 10px;
     border-left: 4px solid var(--primary);
 }
 
 .poem pre {
-    white-space: pre-wrap; /* Mantiene el formato del poema */
-    font-family: 'Crimson Text', serif; /* Usa la misma fuente del cuerpo */
+    white-space: pre-wrap;
+    font-family: 'Crimson Text', serif;
     font-size: 1.1rem;
     line-height: 1.8;
     margin: 0;
@@ -143,7 +144,6 @@ body {
     animation: sparkle 1.5s infinite;
 }
 
-/* --- CORRECCIÓN CLAVE: Aplicar estilos a los botones de Streamlit --- */
 .stButton > button {
     background: linear-gradient(45deg, var(--primary), var(--secondary)) !important;
     color: white !important;
@@ -154,7 +154,7 @@ body {
     font-weight: 600 !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 5px 15px var(--shadow) !important;
-    width: 100%; /* Para que los botones se vean mejor en columnas */
+    width: 100%;
 }
 
 .stButton > button:hover {
@@ -171,20 +171,29 @@ body {
     margin: 0.5rem 0 !important;
     border: 2px solid transparent !important;
     transition: all 0.3s ease !important;
+    color: var(--text) !important; /* Asegura el color del texto del radio */
 }
 
 .stRadio > div > label:hover {
     border-color: var(--primary) !important;
-    background: rgba(255, 107, 157, 0.1) !important;
+    background: rgba(255, 153, 204, 0.1) !important; /* Tono pastel para hover */
 }
 
 .message-box {
-    background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(196, 69, 105, 0.1));
+    background: linear-gradient(135deg, rgba(255, 153, 204, 0.1), rgba(255, 102, 178, 0.1)); /* Tonos pastel */
     border-radius: 15px;
     padding: 1.5rem;
     margin: 1rem 0;
     border-left: 4px solid var(--primary);
     animation: slideInUp 0.5s ease-out;
+    color: var(--text) !important; /* Asegura el color del texto */
+}
+
+/* Estilos para el texto de st.success */
+.stSuccess {
+    background-color: #e0ffe0 !important; /* Verde pastel muy claro */
+    color: #3c763d !important; /* Verde oscuro para el texto */
+    border-color: #d6e9c6 !important;
 }
 
 @keyframes fadeInDown {
@@ -226,7 +235,6 @@ def safe_rerun():
     try:
         st.rerun()
     except Exception:
-        # Fallback para versiones más antiguas si es necesario
         st.experimental_rerun()
 
 # --------------------
@@ -321,9 +329,9 @@ if choice == "💖 Declaración de amor gigante":
         <svg width='300' height='250' viewBox='0 0 32 29.6' xmlns='http://www.w3.org/2000/svg' style='margin:1rem 0'>
             <defs>
                 <linearGradient id='heartGradient' x1='0%' y1='0%' x2='100%' y2='100%'>
-                    <stop offset='0%' style='stop-color:#ff6b9d;stop-opacity:1' />
-                    <stop offset='50%' style='stop-color:#c44569;stop-opacity:1' />
-                    <stop offset='100%' style='stop-color:#ff6b9d;stop-opacity:1' />
+                    <stop offset='0%' style='stop-color:#ff99cc;stop-opacity:1' />
+                    <stop offset='50%' style='stop-color:#ff66b2;stop-opacity:1' />
+                    <stop offset='100%' style='stop-color:#ff99cc;stop-opacity:1' />
                 </linearGradient>
             </defs>
             <path d='M23.6,0c-2.7,0-4.9,1.6-6,3.8C16.3,1.6,14.1,0,11.4,0C5.1,0,0,5.1,0,11.4c0,7.1,7.5,11.6,16,18.2 c8.5-6.6,16-11.1,16-18.2C32,5.1,26.9,0,20.6,0z' fill='url(#heartGradient)'>
@@ -342,28 +350,32 @@ if choice == "💖 Declaración de amor gigante":
     """
     html(enhanced_love_html, height=450)
 
-# --- Opción 2: Poema dedicado con formato corregido ---
+# --- Opción 2: Poema dedicado con nuevo texto y formato corregido ---
 elif choice == "📝 Poema dedicado":
-    enhanced_poem = """Isabella, estrella de mis versos,
+    # Nuevo poema proporcionado
+    enhanced_poem = """rubio incendio en la penumbra,
 
-rubio incendio en la penumbra,
 cada rizo es un latido que no sé nombrar.
-
 sonrisa —abismo dulce—
+
 me arroja al centro de lo imposible,
+
 allí donde la piel se vuelve plegaria.
-
 tu piel:
-un lenguaje que la noche traduce en deseo.
-tu alma:
-una constelación que insiste en quedarse,
-aun cuando todo lo demás se desvanezca.
 
+un lenguaje que la noche traduce en deseo.
+
+tu alma:
+
+una constelación que insiste en quedarse,
+
+aun cuando todo lo demás se desvanezca.
 te nombro en silencio,
+
 y el mundo es apenas un eco
+
 del resplandor que dejas en mí."""
 
-    # --- CORRECCIÓN CLAVE: Usar <pre> para asegurar el formato del poema ---
     poem_html = f"""
     <div class='card'>
         <div style='text-align:center; font-family:"Dancing Script", cursive; font-size:1.8rem; color:var(--primary); margin-bottom:1.5rem'>
@@ -432,8 +444,18 @@ Con todo mi cariño y amor,
 El ingeniero que te ama💕"""
     st.markdown(f"<div style='font-size:1.1rem; line-height:1.8; color:var(--text)'>{enhanced_letter}</div>", unsafe_allow_html=True)
 
-    # El código para el mensaje personalizado del usuario se ha omitido por brevedad, pero puedes agregarlo aquí si lo deseas.
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("<div style='margin-top:2rem; padding-top:1rem; border-top:2px solid var(--primary)'>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size:1.1rem; color:var(--secondary); margin-bottom:1rem'>✍️ Crea tu mensaje personalizado:</div>", unsafe_allow_html=True)
+    
+    user_message = st.text_area("Escribe algo especial para Isabella:", placeholder="Tu mensaje aquí...")
+    
+    if user_message:
+        st.markdown(f"<div class='message-box'><strong>Tu mensaje:</strong><br><em>{user_message}</em></div>", unsafe_allow_html=True)
+        
+        if st.button("🎊 Mostrar con Celebración", key="celebrate_message"):
+            st.balloons()
+            st.success("¡Mensaje enviado con amor! 💕")
+    st.markdown("</div></div>", unsafe_allow_html=True)
 
 # --- Opción 5: Sorpresa interactiva ---
 elif choice == "🌟 Sorpresa interactiva":
@@ -455,7 +477,7 @@ elif choice == "🌟 Sorpresa interactiva":
 
     if question and st.button("🔮 Revelar la Respuesta Mágica"):
         answer = random.choice(magical_answers)
-        st.markdown(f"<div class='message-box' style='text-align:center; font-size:1.3rem; background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(196, 69, 105, 0.2))'><strong>🔮 El corazón responde:</strong><br><br><em>{answer}</em></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='message-box' style='text-align:center; font-size:1.3rem; background: linear-gradient(135deg, rgba(255, 153, 204, 0.2), rgba(255, 102, 178, 0.2))'><strong>🔮 El corazón responde:</strong><br><br><em>{answer}</em></div>", unsafe_allow_html=True)
         st.balloons()
 
     st.markdown("<hr style='margin: 2rem 0; border-color: var(--shadow);'>", unsafe_allow_html=True)
@@ -473,4 +495,3 @@ st.markdown("✨ Creado con amor infinito para Isabella ✨<br>💕 Que cada dí
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
-
