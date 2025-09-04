@@ -471,7 +471,9 @@ elif choice == "🌟 Sorpresa interactiva":
         "Sin duda alguna, tu luz brilla más que las estrellas 🌟",
         "Por supuesto, eres una obra maestra de la naturaleza 🎨",
         "Definitivamente, tu corazón es puro oro 💛",
+        "Ni goku ssj3 es tan bravo pero así te amo💛",
         "¡Claro que sí! Eres única e irreemplazable 👑",
+        "Tienes la frente y el corazón más grande del mundo 👑",
         "Absolutamente, tu sonrisa puede cambiar el mundo 😊"
     ]
 
@@ -495,3 +497,4 @@ st.markdown("✨ Creado con amor infinito para Isabella ✨<br>💕 Que cada dí
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("</div>", unsafe_allow_html=True)
+
